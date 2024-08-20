@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Scores</title>
+</head>
+<body>
+    <h1>Cricket Scores</h1>
+
+    <h2>Recent Matches</h2>
+    {% if recent_matches %}
+        <ul>
+            {% for match in recent_matches %}
+                <li>
+                    <strong>{{ match.description }}</strong><br>
+                    {{ match.team1 }} vs {{ match.team2 }}<br>
+                    Status: {{ match.status }}<br>
+                    Score: {{ match.score }} / {{ match.wickets }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recent matches found.</p>
+    {% endif %}
+
+    <h2>Upcoming Matches</h2>
+    {% if upcoming_matches %}
+        <ul>
+            {% for match in upcoming_matches %}
+                <li>
+                    <strong>{{ match.description }}</strong><br>
+                    {{ match.team1 }} vs {{ match.team2 }}<br>
+                    Start Date: {{ match.startDate }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No upcoming matches found.</p>
+    {% endif %}
+</body>
+</html>

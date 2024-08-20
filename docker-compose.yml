@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  cricketapi:
+    image: cricketapi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
